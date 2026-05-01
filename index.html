@@ -9,13 +9,12 @@
             --gold-primary: #FFD700;
             --gold-dark: #B8860B;
             --dark-bg: #0a0a0a;
-            --matrix-green: #00ff41;
         }
 
         body {
             background-color: var(--dark-bg);
             color: #e0e0e0;
-            font-family: 'Orbitron', sans-serif, Arial;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
@@ -28,7 +27,7 @@
             padding: 40px;
             border: 2px solid var(--gold-primary);
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2), inset 0 0 15px rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
         }
 
         .logo-emas {
@@ -39,16 +38,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
         .sub-header {
             text-align: center;
             color: var(--gold-primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 30px;
             letter-spacing: 2px;
+            font-weight: bold;
         }
 
         .section-title {
@@ -58,12 +58,13 @@
             color: var(--gold-primary);
             font-weight: bold;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .grid-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
         }
 
         @media (max-width: 650px) {
@@ -85,13 +86,13 @@
             background: #121212;
             border: 1px solid #333;
             color: white;
-            padding: 14px;
+            padding: 12px;
             border-radius: 8px;
             outline: none;
             transition: 0.3s ease;
         }
 
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             border-color: var(--gold-primary);
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
@@ -107,31 +108,28 @@
         .btn-submit {
             width: 100%;
             padding: 18px;
-            margin-top: 40px;
+            margin-top: 30px;
             background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary));
             color: black;
             border: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             border-radius: 10px;
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: 0.3s;
         }
 
         .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
         }
 
         .footer {
             text-align: center;
             margin-top: 30px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--gold-primary);
-            opacity: 0.8;
         }
     </style>
 </head>
@@ -139,114 +137,93 @@
 
 <div class="container">
     <div class="logo-emas">HALO GUBERNUR KEPRI</div>
-    <div class="sub-header">SAHABAT KEPRI - Tika Ikbal</div>
+    <div class="sub-header">SAHABAT KEPRI - Tika Ikbal Software House</div>
 
     <form action="https://formbold.com/s/6lj4Q" method="POST" enctype="multipart/form-data">
         
-        <div class="section-title">Kontak & Identitas Utama</div>
+        <div class="section-title">Data Diri & Kontak</div>
         <div class="grid-form">
-            <div class="input-group">
-                <label>Nomor Telepon</label>
-                <input type="tel" name="Nomor_Telepon" placeholder="08..." required>
-            </div>
             <div class="input-group">
                 <label>Nomor WhatsApp</label>
                 <input type="tel" name="WhatsApp" placeholder="08..." required>
             </div>
-            <div class="input-group full-width">
-                <label>Alamat E-mail</label>
-                <input type="email" name="Email" placeholder="email@anda.com" required>
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" name="Email" placeholder="email@anda.com">
             </div>
             <div class="input-group">
-                <label>Nomor KTP (NIK)</label>
-                <input type="number" name="NIK" required>
+                <label>NIK (KTP)</label>
+                <input type="number" name="NIK">
             </div>
             <div class="input-group">
-                <label>Nomor Kartu Keluarga (KK)</label>
-                <input type="number" name="No_KK" required>
+                <label>Nomor KK</label>
+                <input type="number" name="KK">
             </div>
         </div>
 
-        <div class="section-title">Tempat & Tanggal Lahir</div>
-        <div class="grid-form" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="section-title">Informasi Kelahiran & Status</div>
+        <div class="grid-form">
             <div class="input-group">
-                <label>Hari (Tgl)</label>
-                <input type="number" name="Tgl_Lahir" min="1" max="31" placeholder="01">
+                <label>Tanggal/Bulan/Tahun Lahir</label>
+                <input type="text" name="Tgl_Lahir" placeholder="Contoh: 17 Agustus 1945">
             </div>
             <div class="input-group">
-                <label>Bulan</label>
-                <select name="Bulan_Lahir">
-                    <option value="Januari">Januari</option>
-                    <option value="Februari">Februari</option>
-                    <option value="Maret">Maret</option>
-                    <option value="April">April</option>
-                    <option value="Mei">Mei</option>
-                    <option value="Juni">Juni</option>
-                    <option value="Juli">Juli</option>
-                    <option value="Agustus">Agustus</option>
-                    <option value="September">September</option>
-                    <option value="Oktober">Oktober</option>
-                    <option value="November">November</option>
-                    <option value="Desember">Desember</option>
+                <label>Status Pernikahan</label>
+                <select name="Status">
+                    <option value="Belum Menikah">Belum Menikah</option>
+                    <option value="Sudah Menikah">Sudah Menikah</option>
+                    <option value="Cerai">Cerai</option>
                 </select>
             </div>
-            <div class="input-group">
-                <label>Tahun</label>
-                <input type="number" name="Tahun_Lahir" placeholder="1990">
-            </div>
         </div>
 
-        <div class="section-title">Lokasi Domisili (Hingga Pelosok)</div>
+        <div class="section-title">Lokasi & Daerah Kebanggaan</div>
         <div class="grid-form">
             <div class="input-group">
                 <label>Provinsi</label>
-                <input type="text" name="Provinsi" value="Kepulauan Riau" readonly>
+                <input type="text" name="Provinsi" placeholder="Masukkan Provinsi Anda">
             </div>
             <div class="input-group">
-                <label>Kabupaten/Kota</label>
-                <input type="text" name="Kabupaten" placeholder="Contoh: Karimun/Batam">
+                <label>Kota/Kabupaten</label>
+                <input type="text" name="Kota_Kab" placeholder="Contoh: Karimun">
             </div>
             <div class="input-group">
                 <label>Kecamatan</label>
                 <input type="text" name="Kecamatan">
             </div>
             <div class="input-group">
-                <label>Desa/Kelurahan (Desa Terpencil)</label>
-                <input type="text" name="Desa_Pelosok" placeholder="Nama Desa Anda">
+                <label>Desa / Kampung Pelosok</label>
+                <input type="text" name="Desa_Kampung" placeholder="Nama desa terpencil anda">
+            </div>
+            <div class="input-group full-width">
+                <label>Wisata Menarik di Daerah Kalian</label>
+                <input type="text" name="Wisata_Lokal" placeholder="Sebutkan tempat keren di kampung kalian">
             </div>
         </div>
 
-        <div class="section-title">Informasi Tambahan & Hobby</div>
+        <div class="section-title">Latar Belakang</div>
         <div class="grid-form">
             <div class="input-group">
-                <label>Status Pernikahan</label>
-                <select name="Status_Nikah">
-                    <option value="Sudah Menikah">Sudah Menikah</option>
-                    <option value="Belum Menikah">Belum Menikah</option>
-                    <option value="Cerai">Cerai</option>
-                </select>
-            </div>
-            <div class="input-group">
                 <label>Pernah Sekolah Dimana?</label>
-                <input type="text" name="Riwayat_Sekolah" placeholder="Nama Sekolah Terakhir">
+                <input type="text" name="Sekolah">
             </div>
             <div class="input-group">
                 <label>Makanan Kesukaan</label>
-                <input type="text" name="Makanan_Suka" placeholder="Contoh: Nasi Dagang/Lutong">
+                <input type="text" name="Makanan">
             </div>
-            <div class="input-group">
-                <label>Upload Foto Tanda Pengenal</label>
-                <input type="file" name="Foto_Identitas">
+            <div class="input-group full-width">
+                <label>Upload Foto Tanda Pengenal / Foto Lokasi</label>
+                <input type="file" name="Lampiran_Foto">
             </div>
         </div>
 
-        <div class="section-title">Kotak Keluhan & Aspirasi</div>
+        <div class="section-title">Kotak Keluhan Masyarakat</div>
         <div class="input-group full-width">
-            <label>Tuliskan Keluhan Anda Di Sini</label>
-            <textarea name="Keluhan_Masyarakat" rows="6" placeholder="Ceritakan kendala atau bantuan yang anda butuhkan..."></textarea>
+            <label>Tulis Keluhan / Aspirasi Anda</label>
+            <textarea name="Keluhan" rows="5" placeholder="Sampaikan apa yang perlu diperbaiki di daerah anda..."></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">KIRIM ADUAN SEKARANG</button>
+        <button type="submit" class="btn-submit">Kirim Sekarang</button>
     </form>
 
     <div class="footer">
@@ -255,4 +232,4 @@
 </div>
 
 </body>
-</html>
+                    </html>
